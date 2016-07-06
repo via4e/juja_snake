@@ -17,29 +17,7 @@
 </div>
  
 <script>
-/* Объявляем холст */
-    var stadium = document.getElementById("stadium");
-    var obj1 = stadium.getContext('2d');
-	
-/*  Объявляем змИйюку */
-	var snakeBody = new Image(); // спрайт - кусок тела
-	var snakeHeadX = 20; // координаты башки змея по X, в пикселях X*20
-	var snakeHeadY = 15; // координаты башки змея по Y, в пикселях Y*20
-	var snakeTailX = 22; // координаты башки змея по X, в пикселях X*20
-	var snakeTailY = 15; // координаты башки змея по Y, в пикселях Y*20
-	var snakeDirection = 1; // 1 - лево, 2 - вверх, 3 - вправо, 4 - вниз
-	snakeBody.src = "img/snake-body.png";
-	snakeHead.src = "img/snake-head.png";
-	snakeTail.src = "img/snake-tail.png";
-	
-	snakeBody.onload = function ()
-		{
-		obj1.drawImage (snakeBody, 200,200);
-		}
-		
-	obj1.fillStyle = "#55CF7E";
-	obj1.fillStyle = "#EECF7E";	
-	obj1.fillRect(440, 440, 100, 100); // (x, y, ширина, высота) Рисует прямоугольник
+
 	
 </script>
   
