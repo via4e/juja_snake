@@ -1,5 +1,19 @@
 function jujaStart () {
     console.log( 'juja' );
+    setTimeout( loop, 1000)
+}
+
+function loop () {
+    update();
+    draw();
+}
+
+function update () {
+    console.log('update')
+}
+
+function draw () {
+    console.log('draw')
 }
 
 function checkJquery() {
@@ -10,6 +24,7 @@ function checkJquery() {
         setTimeout(checkJquery, 50);
     }
 }
-
 checkJquery();
+
+
 
