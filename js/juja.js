@@ -23,7 +23,7 @@ function update () {
     console.log('update:', snake)
 
     if (snake.direction==0) {
-        if (snake.y!=0) {snake.y=y-1}
+        if (snake.y!=0) {snake.y=snake.y-1}
         if (snake.y==0) {snake.y=29}
     }
 }
