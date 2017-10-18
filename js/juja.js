@@ -1,3 +1,5 @@
+var snake={};
+
 function jujaStart () {
     console.log( 'juja' );
     var snake={};
