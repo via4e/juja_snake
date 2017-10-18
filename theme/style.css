@@ -22,6 +22,7 @@ body
 	}
 #fence
 	{
+    position:relative;
 	width:800px;
 	height:600px;
 	margin:18px auto;
@@ -30,5 +31,11 @@ body
 	}
 
 #snake-head {
-	
+{
+    position:absolute;
+    width:20px;
+    height:20px;
+    margin: 0;
+    border: 12px solid #007046;
+    background: url(../img/header.png) no-repeat;
 }
