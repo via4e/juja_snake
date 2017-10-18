@@ -17,7 +17,11 @@ function loop () {
 }
 
 function update () {
-    console.log('update')
+    console.log('update:', snake)
+
+    if (snake.direction==0) {
+        if (snake.y!=0) {snake.y=y-1}
+    }
 }
 
 function draw () {
