@@ -9,7 +9,7 @@ function jujaStart () {
 
     snake.x = 15;
     snake.y = 19;
-    snake.direction = 3;
+    snake.direction = 0;
 
     setInterval( loop, 1000)
 }
@@ -24,6 +24,7 @@ function update () {
 
     if (snake.direction==0) {
         if (snake.y!=0) {snake.y=y-1}
+        if (snake.y==0) {snake.y=29}
     }
 }
 
