@@ -5,7 +5,7 @@ function jujaStart () {
     console.log( 'juja' );
 
     // 0 < x 29,  0 < y < 39
-// snake.direction 0,1,2,3; 0-up, 1-down, 2-left, 3-right
+    // snake.direction 0,1,2,3; 0-up, 1-down, 2-left, 3-right
 
     snake.x = 15;
     snake.y = 19;
@@ -49,7 +49,7 @@ function update () {
 }
 
 function draw () {
-    console.log('draw')
+
 }
 
 function checkJquery() {
