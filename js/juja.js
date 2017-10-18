@@ -1,6 +1,6 @@
 function jujaStart () {
     console.log( 'juja' );
-    setTimeout( loop, 1000)
+    setInterval( loop, 1000)
 }
 
 function loop () {
