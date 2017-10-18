@@ -1,6 +1,6 @@
 function jujaStart () {
     console.log( 'juja' );
-    let snake={};
+    var snake={};
     // 0 < x 29,  0 < y < 39
     // snake.direction 0,1,2,3; 0-up, 1-down, 2-left, 3-right
 
