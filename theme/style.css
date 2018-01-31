@@ -1,6 +1,6 @@
 body
 	{
-	background: #01271e;
+	/* background: #01271e; */
 	}
 
 #header
@@ -8,8 +8,8 @@ body
 	width:1024px;
 	height:150px;
 	margin: 20px auto;
-	border: 12px solid #007046;
-	background: url(../img/header.png) no-repeat;
+	/* border: 12px solid #007046; */
+	/* background: url(../img/header.png) no-repeat; */
 	}
 	
 #main
@@ -17,8 +17,8 @@ body
 	width:1024px;
 	height:640px;
 	margin:0 auto;
-	background: #228B22;	
-	border: 12px solid #007046;
+	/* background: #228B22; */
+	/* border: 12px solid #007046; */
 	}
 #fence
 	{
@@ -26,7 +26,7 @@ body
 	width:800px;
 	height:600px;
 	margin:18px auto;
-	border: 3px dotted green;
+	/* border: 3px dotted green; */
 	background-color: #000;		
 	}
 
@@ -36,5 +36,5 @@ body
     height:20px;
     margin: 0;
     border: 12px solid #007046;
-    background: url(../img/header.png) no-repeat;
+    background: url(../img/snake-head.png) no-repeat;
 }

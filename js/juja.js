@@ -1,5 +1,7 @@
-var snake={};
+console.log('Legend of Juja Snake v.1.2  2011 - 31.01.2018');
+'use strict'
 
+let snake={};
 
 function jujaStart () {
     console.log( 'juja' );
@@ -11,7 +13,12 @@ function jujaStart () {
     snake.y = 19;
     snake.direction = 3;
 
-    setInterval( loop, 1000)
+// как тут сразу keyHandler вызвать, а не внутри function
+    $('html').keydown( function (e) {
+        keyHandler (e)
+    });
+
+    setInterval( loop, 1500)
 }
 
 function loop () {
@@ -49,7 +56,36 @@ function update () {
 }
 
 function draw () {
+    console.log ("snk:", snake)
+}
 
+function keyHandler (e) {
+    // e.which --->   Enter-13   Space-32
+    // Left-37
+    // Right-39
+    // Up-38
+    // Down-40
+    //console.log ('key:', e.which)
+    let key=e.which;
+
+    switch (key) {
+        case (37):
+           // left
+           snake.direction=2;
+           break;
+        case (38):
+           // up
+           snake.direction=0;
+           break;
+        case (39):
+           // right
+           snake.direction=3;
+           break;
+        case (40):
+           // down
+           snake.direction=1;
+           break;  
+    }                               
 }
 
 function checkJquery() {
@@ -61,6 +97,3 @@ function checkJquery() {
     }
 }
 checkJquery();
-
-
-
