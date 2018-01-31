@@ -1,13 +1,22 @@
-console.log('Legend of Juja Snake v.1.2  2011 - 31.01.2018');
 'use strict'
+console.log('Legend of Juja Snake v.1.2  2011 - 31.01.2018');
+
+//
+// 0 < x 29,  0 < y < 39
+// snake.direction 0,1,2,3; 0-up, 1-down, 2-left, 3-right
+//
+//  Next step: 
+//  1. Head and tail position tracking
+//  2. Sprites moving snake body
+//  3. Snake Food
+//  4. Sound engine
+//  5. Strip image prize
+//  6. Scores w name
+//
 
 let snake={};
 
 function jujaStart () {
-    console.log( 'juja' );
-
-    // 0 < x 29,  0 < y < 39
-    // snake.direction 0,1,2,3; 0-up, 1-down, 2-left, 3-right
 
     snake.x = 15;
     snake.y = 19;
@@ -56,15 +65,11 @@ function update () {
 }
 
 function draw () {
-    console.log ("snk:", snake)
+    // console.log ("snk:", snake)
 }
 
 function keyHandler (e) {
     // e.which --->   Enter-13   Space-32
-    // Left-37
-    // Right-39
-    // Up-38
-    // Down-40
     //console.log ('key:', e.which)
     let key=e.which;
 
