@@ -15,12 +15,24 @@ console.log('Legend of Juja Snake v.1.2  2011 - 31.01.2018');
 //
 
 let snake={};
+let area=[];
 
 function jujaStart () {
 
-    snake.x = 15;
-    snake.y = 19;
+    snake.x = 15; //координаты головы
+    snake.y = 19; //координаты головы
     snake.direction = 3;
+
+// создать поле area[row 0..29][col 0..39]
+for (let i=0; i<30; i++) {
+    area[i]=[];
+}
+
+for (i in a) {
+  for (let j=0; j<40; j++) {
+     area[i][j]=0
+  }
+}
 
 // как тут сразу keyHandler вызвать, а не внутри function
     $('html').keydown( function (e) {
@@ -61,7 +73,6 @@ function update () {
         if (snake.x!=39) {snake.x=snake.x+1}
         if (snake.x==39) {snake.x=0}
     }
-
 }
 
 function draw () {
@@ -74,20 +85,16 @@ function keyHandler (e) {
     let key=e.which;
 
     switch (key) {
-        case (37):
-           // left
+        case (37):  // left
            snake.direction=2;
            break;
-        case (38):
-           // up
+        case (38):  // up
            snake.direction=0;
            break;
-        case (39):
-           // right
+        case (39):  // right
            snake.direction=3;
            break;
-        case (40):
-           // down
+        case (40):  // down
            snake.direction=1;
            break;  
     }                               
