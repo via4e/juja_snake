@@ -84,23 +84,31 @@ function update () {
         case 3:
            console.log ('Snake take food.');
            game.score += 10 * game.level;
-           game.prizeOnScreen--;
+           game.foodsOnScreen--;
            console.log('score', game.score)
+           if (game.foods<1) {
+             game.level++;
+             // сделат проверку увеличения уровня игры
+             console.log('start next level', game.level)
+             startLoop();
+           }
            break;           
     } 
     
     area[snake.y][snake.x]=1 //snake head new coord
 
     // Food (prize) check
-    if (game.prizeOnScreen < 1) {
+    if (game.foodsOnScreen < 1) {
         let x = Math.round(Math.random() * 40);
         let y = Math.round(Math.random() * 30);
-        game.prizeOnScreen = 1
-        area[x][y]=3;
+        game.foodsOnScreen = 1;
+
         console.log('!',x,y,area)
+        
+        debugger;
+        area[x][y]=3;
+        debugger;
     }
-
-
 }
 
 function draw () {
@@ -167,16 +175,16 @@ function init() {
 
     game.score=0;
     game.level=1;
-    game.prizeOnScreen=0
+    game.foodsOnScreen=0
 
     //Скорость и кол-во призов для завершения уровня, зависит от уровня
 
-    switch (snake.level) {
-      case 1: game.speed = 1000; game.prize = 4; break;
-      case 2: game.speed = 900; game.prize = 5; break;
-      case 3: game.speed = 800; game.prize = 6; break;
-      case 4: game.speed = 750; game.prize = 7; break;
-      case 5: game.speed = 600; game.prize = 8; break;                        
+    switch (game.level) {
+      case 1: game.speed = 1000; game.foods = 1; break;
+      case 2: game.speed = 900; game.foods = 2; break;
+      case 3: game.speed = 800; game.foods = 4; break;
+      case 4: game.speed = 750; game.foods = 6; break;
+      case 5: game.speed = 600; game.foods = 8; break;                        
       default: game.speed = 444; 
     }
 
