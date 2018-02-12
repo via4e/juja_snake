@@ -1,5 +1,5 @@
 'use strict'
-console.log('Legend of Juja Snake v.1.2  2011 - 31.01.2018');
+console.log('Legend of Juja Snake v.1.2  2011 - 12.02.2018');
 
 //
 // 0 < x 29,  0 < y < 39
@@ -12,7 +12,7 @@ console.log('Legend of Juja Snake v.1.2  2011 - 31.01.2018');
 //  4. Sound engine
 //  5. Strip image prize
 //  6. Scores w name
-//
+//  7. Pause - P, Exit - ESC
 
 let snake={};
 let area=[];
@@ -22,13 +22,14 @@ function jujaStart () {
     snake.x = 15; //координаты головы
     snake.y = 19; //координаты головы
     snake.direction = 3;
+    snake.dead = false;
 
 // создать поле area[row 0..29][col 0..39]
 for (let i=0; i<30; i++) {
     area[i]=[];
 }
 
-for (i in a) {
+for (let i in area) {
   for (let j=0; j<40; j++) {
      area[i][j]=0
   }
@@ -39,16 +40,18 @@ for (i in a) {
         keyHandler (e)
     });
 
-    setInterval( loop, 1500)
+    setInterval( loop, 750)
 }
 
 function loop () {
     update();
     draw();
+    if (snake.dead) {console.log('i see, snake dead');}
 }
 
 function update () {
     console.log('update:', snake)
+    area[snake.y][snake.x]=2 //body on old coords
 
     // up
     if (snake.direction==0) {
@@ -73,10 +76,33 @@ function update () {
         if (snake.x!=39) {snake.x=snake.x+1}
         if (snake.x==39) {snake.x=0}
     }
+
+    let chk = area[snake.y][snake.x]
+    console.log('chk',chk)
+    if (chk==2) { console.log ('Snake die.'); snake.dead=true;}
+    area[snake.y][snake.x]=1 //snake head new coord
 }
 
 function draw () {
-    // console.log ("snk:", snake)
+
+ console.log ("draw:", snake, Date.now() )
+ let t=`<div class='tile'></div>`
+ let ty=`<div class='tile yellow'></div>`
+ let tg=`<div class='tile grey'></div>`
+ $('#fence').empty();
+ let c=0;
+
+ for (let i in area) {
+      for (let j=0; j<40; j++) {
+        c++; 
+        let a=t;
+        if (area[i][j]==0) { a=t }
+        if (area[i][j]==1) { a=ty } //head
+        if (area[i][j]==2) { a=tg } //body?            
+        $('#fence').append(a)
+      }
+ }
+
 }
 
 function keyHandler (e) {
@@ -97,6 +123,9 @@ function keyHandler (e) {
         case (40):  // down
            snake.direction=1;
            break;  
+        case (27):  // ESC
+           console.log('ESC'); snake.dead = true;
+           break;            
     }                               
 }
 
@@ -109,3 +138,4 @@ function checkJquery() {
     }
 }
 checkJquery();
+

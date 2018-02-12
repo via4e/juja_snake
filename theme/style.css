@@ -38,3 +38,14 @@ body
     border: 12px solid #007046;
     background: url(../img/snake-head.png) no-repeat;
 }
+
+.tile {
+    position:relative;
+    float:left;
+    width:18px;
+    height:18px;
+    border:1px solid green;	
+}
+
+.yellow { background-color: yellow; }
+.grey { background-color: lightgrey; }
