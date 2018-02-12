@@ -30,13 +30,28 @@ body
 	background-color: #000;		
 	}
 
-#snake-head {
-    position:absolute;
+.snake-head {
+    position:relative;
+    float:left;
     width:20px;
     height:20px;
-    margin: 0;
-    border: 12px solid #007046;
     background: url(../img/snake-head.png) no-repeat;
+}
+
+.snake-body {
+    position:relative;
+    float:left;
+    width:20px;
+    height:20px;
+    background: url(../img/snake-body.png) no-repeat;
+}
+
+.food {
+    position:relative;
+    float:left;
+    width:20px;
+    height:20px;
+    background: url(../img/food.png) no-repeat;
 }
 
 .tile {
