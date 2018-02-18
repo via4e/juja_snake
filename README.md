@@ -1,3 +1,5 @@
+# 18-02-2018
+
 # juja_snake
 "Legend of the Juja Snake" - simple  browser game, like a nokia "Snake" for cells
 
