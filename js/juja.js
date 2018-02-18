@@ -85,7 +85,7 @@ function update () {
            console.log ('Snake take food.');
            game.score += 10 * game.level;
            game.foodsOnScreen--;
-           console.log('score', game.score)
+           $("#sco").text(game.score);
            if (game.foods<1) {
              game.level++;
              // сделат проверку увеличения уровня игры
@@ -105,9 +105,9 @@ function update () {
 
         console.log('!',x,y,area)
         
-        debugger;
+        //debugger;
         area[x][y]=3;
-        debugger;
+        //debugger;
     }
 }
 
@@ -176,6 +176,9 @@ function init() {
     game.score=0;
     game.level=1;
     game.foodsOnScreen=0
+
+    $("#sco").text(game.score)
+    $("#lvl").text(game.level)
 
     //Скорость и кол-во призов для завершения уровня, зависит от уровня
 

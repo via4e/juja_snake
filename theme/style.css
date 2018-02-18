@@ -1,6 +1,6 @@
 body
 	{
-	/* background: #01271e; */
+	 background: #01271e; 
 	}
 
 #header
@@ -8,12 +8,13 @@ body
 	width:1024px;
 	height:150px;
 	margin: 20px auto;
-	/* border: 12px solid #007046; */
-	/* background: url(../img/header.png) no-repeat; */
+	border: 12px solid #007046;
+	background: url(../img/header.png) no-repeat;
 	}
 	
 #main
 	{
+	position:relative;
 	width:1024px;
 	height:640px;
 	margin:0 auto;
@@ -22,13 +23,40 @@ body
 	}
 #fence
 	{
-    position:relative;
+    position:absolute;
+    top:0;
+    left:0;
 	width:800px;
 	height:600px;
-	margin:18px auto;
-	/* border: 3px dotted green; */
+	border: 3px dotted green;
 	background-color: #000;		
 	}
+
+
+
+#sco {
+	position:absolute;
+    top:0;
+    right:0;
+    width:160px;
+    height:36px;
+	border: 3px dotted green;
+	color: yellow; font-size: 30px; padding: 5px 10px;
+	background-color: #000;	    
+}
+
+#lvl {
+	position:absolute;
+    top:80px;
+    right:0;
+    width:160px;
+    height:36px;
+	border: 3px dotted green;
+	color: yellow; font-size: 30px; padding: 5px 10px;
+	background-color: #000;	    
+}
+
+/* Game */
 
 .snake-head {
     position:relative;
@@ -59,7 +87,7 @@ body
     float:left;
     width:18px;
     height:18px;
-    border:1px solid green;	
+    border:1px solid #002200;	
 }
 
 .yellow { background-color: yellow; }
