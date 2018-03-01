@@ -8,7 +8,7 @@ console.log('Legend of Juja Snake v.1.2  2011 - 12.02.2018');
 //  Next step: 
 //  3. Snake Multiple Food
 //  4. Sound engine
-//  5. Strip image prize
+//  5. Strip image prize   $('#prizepic').css('background', 'url(img/prz1.png) no-repeat')
 //  6. Scores w name
 //  7. Pause - P
 
@@ -24,11 +24,11 @@ function jujaStart () {
         keyHandler (e)
     });
  
+    init();
     startLoop();
 }
 
 function startLoop () {
-    init();
     game.started = Date.now()
     game.score=0;
     game.cycle = setInterval(loop, game.speed)
@@ -86,7 +86,7 @@ function update () {
            game.score += 10 * game.level;
            snake.bodylength = snake.bodylength + 5;
            game.foodsOnScreen--;
-           $("#sco").text(game.score);
+           game.foods--;
            if (game.foods<1) {
              game.level++;
              // сделат проверку увеличения уровня игры
@@ -118,23 +118,25 @@ function update () {
             area[x][y]=3;
             correctFood = true;
           } //if empty field, set food there
+          console.log('!',x,y,area)  
         } 
         game.foodsOnScreen = 1;
 
-        console.log('!',x,y,area)
         //debugger;
     }
 }//update
 
 function draw () {
-
  //console.log ("draw:", snake, Date.now() )
  let   t = 'tile';
  let tsh = 'snake-head';
  let tsb = 'snake-body';
  let  tf = 'food';
- $('#fence').empty();
  let c=0;
+
+ $('#fence').empty();
+ $("#sco").text(game.score); 
+ $("#lvl").text(game.level) 
 
  for (let i in area) {
       for (let j=0; j<40; j++) {
@@ -197,7 +199,9 @@ function init() {
 
     game.score=0;
     game.level=1;
-    game.foodsOnScreen=0
+    game.foodsOnScreen=0;
+    game.speed=0;
+    game.foods=0;
 
     $("#sco").text(game.score)
     $("#lvl").text(game.level)
@@ -205,11 +209,11 @@ function init() {
     //Скорость и кол-во призов для завершения уровня, зависит от уровня
 
     switch (game.level) {
-      case 1: game.speed = 700; game.foods = 1; break;
-      case 2: game.speed = 600; game.foods = 2; break;
-      case 3: game.speed = 500; game.foods = 4; break;
-      case 4: game.speed = 450; game.foods = 6; break;
-      case 5: game.speed = 400; game.foods = 8; break;                        
+      case 1: game.speed = 400; game.foods = 3; break;
+      case 2: game.speed = 380; game.foods = 5; break;
+      case 3: game.speed = 360; game.foods = 7; break;
+      case 4: game.speed = 340; game.foods = 9; break;
+      case 5: game.speed = 320; game.foods = 11; break;                        
       default: game.speed = 444; 
     }
 

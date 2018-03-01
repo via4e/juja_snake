@@ -32,28 +32,73 @@ body
 	background-color: #000;		
 	}
 
+/* SCORES */
 
-
-#sco {
+.scores {
 	position:absolute;
     top:0;
     right:0;
-    width:160px;
+    width:180px;
     height:36px;
+}
+.scores .text {	
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90px;
+    color: yellow;
+    font-size: 20px;
+    padding: 13px 0;
+}
+#sco{
+	position:absolute;
+    top:0;
+    right:0;
+    width:60px;
+    height:36px;    
+	color: yellow; font-size: 30px; padding: 5px;    
+    background-color: #000;	 
 	border: 3px dotted green;
-	color: yellow; font-size: 30px; padding: 5px 10px;
-	background-color: #000;	    
 }
 
-#lvl {
+/* Level */
+
+.levels {
 	position:absolute;
     top:80px;
     right:0;
-    width:160px;
+    width:180px;
     height:36px;
-	border: 3px dotted green;
-	color: yellow; font-size: 30px; padding: 5px 10px;
-	background-color: #000;	    
+}
+.levels .text {	
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90px;
+    color: yellow;
+    font-size: 20px;
+    padding: 13px 0;
+}
+#lvl {
+	position:absolute;
+    top:0;
+    right:0;
+    width:60px;
+    height:36px;    
+	color: yellow; font-size: 30px; padding: 5px;    
+    background-color: #000;	 
+	border: 3px dotted green;   
+} 
+
+/* Prize pic 440x180 */
+#prizepic {
+	position:absolute;
+    top: 160px;
+    right:0;
+    width:180px;
+    height:440px;    
+    background-color: #000;	 
+	border: 3px dotted green;  
 }
 
 /* Game */
