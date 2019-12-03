@@ -4,9 +4,9 @@
   "description": "`Legend of the Juja Snake` - simple  browser game, like a nokia `Snake` for cells",
   "main": "js/juja.js",
   "scripts": {
-    "build": "webpack --config build/webpack.config.prod.js",
+    "build": "webpack --config webpack.config.prod.js",
     "lint": "eslint --ext .js",
-    "dev": "webpack-dev-server --progress --config build/webpack.config.dev.js --client-log-level warning",
+    "dev": "webpack-dev-server --progress --config webpack.config.dev.js --client-log-level warning",
     "lint:fix": "eslint --ext .js --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,7 +14,9 @@
     "type": "git",
     "url": "git+https://github.com/via4e/Juja_snake.git"
   },
-  "keywords": [],
+  "keywords": [
+    "games"
+  ],
   "author": "via4e",
   "license": "ISC",
   "bugs": {
