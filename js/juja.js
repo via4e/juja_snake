@@ -36,8 +36,10 @@ function startLoop() {
 
 function loop() {
 
-  draw();
-  update();
+  if (!game.pause){
+    draw();
+    update();
+  }
 
   if (snake.dead) {
     console.log('i see, snake dead');
@@ -153,7 +155,7 @@ function draw() {
 
 function keyHandler(e) {
   // e.which --->   Enter-13   Space-32
-  //console.log ('key:', e.which)
+  console.log ('key:', e.which)
   let key = e.which;
 
   switch (key) {
